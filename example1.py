@@ -7,4 +7,3 @@ class CreateCircle(Scene):
         circle = Circle()
         self.play(ShowCreation(circle))
         self.wait(2)
-        self.play(FadeOut(circle))

@@ -1,8 +1,8 @@
 from manimlib.imports import *
 
-class CreateSquare(Scene):
+class CreateBox(Scene):
     def construct(self):
-        sq = #add code here 
+        sq = Square()#add code here 
         self.play(ShowCreation(sq))
         self.wait(2)
 

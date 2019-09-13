@@ -1,9 +1,9 @@
 from manimlib.imports import *
 
-class BiggerCircleToSquare(Scene):
+class SuperAwesomClass(Scene):
     def construct(self):
-        circle = # modification required
-        sq = Square()
+        circle = Circle(radius=3) 
+        sq = Square(side_length=2)
         self.play(ShowCreation(circle))
         self.wait(2)
         self.play(Transform(circle, sq))

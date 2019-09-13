@@ -64,7 +64,7 @@ class Scene4(GraphScene):
     "x_max": 5,
     "y_min": -5,
     "y_max": 5,
-    "x_labeled_nums": [-1, 1, 2, 3, 4], #or list(range(-5, 6))
+    "x_labeled_nums": range(-5, 6),
     "graph_origin": ORIGIN,
     }
 
@@ -97,8 +97,12 @@ class Scene5(GraphScene):
     def construct(self):
         self.setup_axes(animate = True)
         func_graph = self.get_graph(self.mygraph, YELLOW_E) #HAS TO BE AFTER SETUP of AXES
+        dot = Dot()
+        dot.shift(self.graph_origin RIGHT+UP)
+        self.add(dot)
         self.play(ShowCreation(func_graph))
         self.wait(2)
+
 
     def mygraph(self,x):
         return np.sin(x)
@@ -111,14 +115,14 @@ class Scene5(GraphScene):
 #trying different graphs
 class Scene6(GraphScene):
     CONFIG = {
-    "x_min": -5,
-    "x_max": 5,
+    "x_min": -20,
+    "x_max": 20,
     "y_min": -3,
     "y_max": 3,
-    "x_axis_width": 8,
-    "y_axis_height": 4.8,
+    "x_axis_width": 10,
+    "y_axis_height": 10,
     "x_labeled_nums": list(range(-5, 6)),
-    "graph_origin": ORIGIN+DOWN,
+    "graph_origin": ORIGIN,
     "exclude_zero_label": True, #when using a list to denote rage of values
 
     }
@@ -130,6 +134,6 @@ class Scene6(GraphScene):
         self.wait(2)
 
     def mygraph(self,x):
-        # return np.tan(x)
+        return np.tan(x)
         # return x*x
-        return np.sqrt(x)
+        # return np.sqrt(x)
